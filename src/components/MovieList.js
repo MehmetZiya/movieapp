@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { MoviContext } from "../contexts/MovieContext";
-import Movie from "../Movie";
+import { MovieContext } from "../contexts/MovieContext";
+import Movie from "./Movie";
 
 const MovieList = () => {
-  const { movies } = useContext(MoviContext)
+  const { movies } = useContext(MovieContext)
 
   return (
     <div>
