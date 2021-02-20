@@ -1,18 +1,18 @@
 import {useContext} from "react" ;
 import {MovieContext} from "../contexts/MovieContext";
 
-const Movie = (props) => {
+const Movie = ({movie}) => {
 
     const { handleDelete } = useContext(MovieContext)
     return ( 
     
     <div >
         <div >
-          <h2 >{props.movie.title}</h2>
-          <p>Director: {props.movie.director}</p>
-          <p>Release Year: {props.movie.releaseYear}</p>
-          <p>Genre: {props.movie.genre}</p>
-          <p onClick={() => handleDelete(props.movie)}>🗑️</p>
+          <h2 >{movie.title}</h2>
+          <p>Director: {movie.director}</p>
+          <p>Release Year: {movie.releaseYear}</p>
+          <p>Genre: {movie.genre}</p>
+          <p onClick={() => handleDelete(movie)}>🗑️</p>
         </div>
       </div> 
       
