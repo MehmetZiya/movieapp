@@ -5,7 +5,7 @@ const Home = () => {
     <div>
       <MovieList />
     </div>
-  )
+  );
 }
-
+ 
 export default Home;
