@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from "react"
 
-export const MoviContext = createContext()
+export const MovieContext = createContext()
+
 
 const MovieProvider = (props) => {
   const [movies, setMovies] = useState([
     {
-      title: "Harry potter and a Prisoner of Azkaban",
+      title: "Harry Potter and a Prisoner of Azkaban",
       director: "Alfonso Cuaron",
       releaseYear: 2004,
       genre: "fantasy"
@@ -28,15 +29,15 @@ const MovieProvider = (props) => {
       releaseYear: 1995,
       genre: "Action"
     },
-  ]) 
-  
-  const handleSubmit = (e, movie, history) => {
+  ])
+
+  const handleSubmit = (e, movie, history) =>{
     e.preventDefault()
     setMovies([movie, ...movies])
     history.push('/')
   }
 
-  const handleDelete = (movie) => {
+  const handleDelete = (movie) =>{
     setMovies(movies.filter(m => m !== movie))
   }
 
@@ -47,10 +48,10 @@ const MovieProvider = (props) => {
   }
 
   return (
-    <MoviContext.Provider value={values}>
+    <MovieContext.Provider value={values}>
       {props.children}
-    </MoviContext.Provider>
-  )
+    </MovieContext.Provider>
+  );
 }
-
+ 
 export default MovieProvider;
